@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BoilerAccess | Purdue University</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+</head>
+
+<body>
+
+    <header>
+        <h1>BoilerAccess</h1>
+        <p>Making Purdue accessible for everyone.</p>
+    </header>
+
+    <main>
+
+        <h2>Accessible Campus Map</h2>
+
+        <p>
+            Find accessible routes around Purdue University.
+        </p>
+
+        <div class="buttons">
+            <button id="routeButton">
+                Find Accessible Route
+            </button>
+
+            <button id="reportButton">
+                Report a Hazard
+            </button>
+        </div>
+
+<section class="route-planner">
+  <h3>Plan Your Route</h3>
+
+  <div class="route-inputs">
+    <div>
+      <label for="startPoint">Starting Point</label>
+      <select id="startPoint">
+        <option value="">Select starting point</option>
+        <option value="walc">WALC</option>
+        <option value="stewart">Stewart Center</option>
+        <option value="pmu">Purdue Memorial Union</option>
+        <option value="armstrong">Armstrong Hall</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="endPoint">Destination</label>
+      <select id="endPoint">
+        <option value="">Select destination</option>
+        <option value="walc">WALC</option>
+        <option value="stewart">Stewart Center</option>
+        <option value="pmu">Purdue Memorial Union</option>
+        <option value="armstrong">Armstrong Hall</option>
+      </select>
+    </div>
+  </div>
+
+  <button id="planRouteButton" type="button">
+    Find Route
+  </button>
+
+  <p id="routeMessage" role="status" aria-live="polite"></p>
+</section>
+
+<section class="filters">
+  <h3>Accessibility Filters</h3>
+
+  <label>
+    <input type="checkbox" id="wheelchair">
+    Wheelchair Accessible
+  </label>
+
+  <label>
+    <input type="checkbox" id="stairs">
+    Avoid Stairs
+  </label>
+
+  <label>
+    <input type="checkbox" id="slopes">
+    Avoid Steep Slopes
+  </label>
+
+  <label>
+    <input type="checkbox" id="hazards">
+    Show Hazards
+  </label>
+</section>
+
+<div id="hazardForm" class="hazard-form" hidden>
+  <h3>Report an Accessibility Hazard</h3>
+
+  <label for="hazardType">Type of Hazard</label>
+  <select id="hazardType">
+    <option value="Broken Sidewalk">Broken Sidewalk</option>
+    <option value="Missing Curb Ramp">Missing Curb Ramp</option>
+    <option value="Stairs">Stairs</option>
+    <option value="Steep Slope">Steep Slope</option>
+    <option value="Poor Lighting">Poor Lighting</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <label for="hazardDescription">Description</label>
+  <textarea id="hazardDescription"
+    placeholder="Describe the accessibility issue..."></textarea>
+
+  <p>Click a location on the map to report the hazard.</p>
+  <p id="hazardLocation">No location selected</p>
+
+  <button type="button" id="submitHazard">
+    Submit Report
+  </button>
+</div>
+
+        <div id="map"></div>
+    </main>
+    
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
